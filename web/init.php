@@ -19,6 +19,16 @@ Page: <http://www.sourcebans.net/> - <http://www.gameconnect.net/>
 //Hotfix for dash_intro_text
 use Smarty\Smarty;
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_GET['lang']) && in_array($_GET['lang'], ['en', 'zh_CN'])) {
+    $_SESSION['lang'] = $_GET['lang'];
+    setcookie('lang', $_GET['lang'], time() + 86400 * 30, '/');
+} elseif (empty($_SESSION['lang']) && isset($_COOKIE['lang']) && in_array($_COOKIE['lang'], ['en', 'zh_CN'])) {
+    $_SESSION['lang'] = $_COOKIE['lang'];
+}
+
 if (isset($_POST['dash_intro_text'])) {
     $dash_intro_text = $_POST['dash_intro_text'];
 }
@@ -207,6 +217,7 @@ $theme->registerPlugin(Smarty::PLUGIN_FUNCTION, 'sb_button', 'smarty_function_sb
 $theme->registerPlugin(Smarty::PLUGIN_FUNCTION, 'load_template', 'smarty_function_load_template');
 $theme->registerPlugin('modifier', 'smarty_stripslashes', 'smarty_stripslashes');
 $theme->registerPlugin('modifier', 'smarty_htmlspecialchars', 'smarty_htmlspecialchars');
+$theme->registerPlugin('modifier', 't', 'smarty_modifier_t');
 
 if ((isset($_GET['debug']) && $_GET['debug'] == 1) || DEBUG_MODE) {
     $theme->setForceCompile(true);

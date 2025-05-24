@@ -33,6 +33,19 @@
                 </ul>
             </div>
             {/if}
+            <div style="float: right; margin-left: 10px;">
+                <form method="get" id="lang-switcher" style="display:inline;">
+                    <select name="lang" onchange="this.form.submit()">
+                        <option value="en" {if $current_lang == 'en'}selected{/if}>English</option>
+                        <option value="zh_CN" {if $current_lang == 'zh_CN'}selected{/if}>简体中文</option>
+                    </select>
+                    {foreach from=$smarty.get key=key item=val}
+                        {if $key != 'lang'}
+                            <input type="hidden" name="{$key}" value="{$val|escape}" />
+                        {/if}
+                    {/foreach}
+                </form>
+            </div>
         </div>
     </div>
 </div>

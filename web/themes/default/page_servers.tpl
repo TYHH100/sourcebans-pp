@@ -1,14 +1,14 @@
 <div>
-    {if $IN_SERVERS_PAGE && $access_bans}<div style="text-align:right; width:100%;"><small>Hint: Rightclick on a player to open a context menu with options to kick, ban or contact the player directly.</small></div>{/if}
+    {if $IN_SERVERS_PAGE && $access_bans}<div style="text-align:right; width:100%;"><small>{'servers.list.hint.right'|t}</small></div>{/if}
     <table cellspacing="0" cellpadding="0" align="center" class="sortable listtable">
         <thead>
         <tr>
-            <td width="2%" height="16" class="listtable_top">MOD</td>
-            <td width="2%" height="16" class="listtable_top">OS</td>
-            <td width="2%" height="16" class="listtable_top">VAC</td>
-            <td height="16" class="listtable_top" align="center"><b>Hostname</b></td>
-            <td width="10%" height="16" class="listtable_top"><b>Players</b></td>
-            <td width="10%" height="16" class="listtable_top"><b>Map</b></td>
+            <td width="2%" height="16" class="listtable_top">{'general.mod'|t}</td>
+            <td width="2%" height="16" class="listtable_top">{'servers.list.os'|t}</td>
+            <td width="2%" height="16" class="listtable_top">{'servers.list.vac'|t}</td>
+            <td height="16" class="listtable_top" align="center"><b>{'servers.list.hostname'|t}</b></td>
+            <td width="10%" height="16" class="listtable_top"><b>{'servers.list.players'|t}</b></td>
+            <td width="10%" height="16" class="listtable_top"><b>{'servers.list.map'|t}</b></td>
         </tr>
         </thead>
         <tbody>
@@ -17,7 +17,7 @@
                 <td height="16" align="center" class="listtable_1"><img height="16px" width="16px" src="images/games/{$server.icon}" border="0" /></td>
                 <td height="16" align="center" class="listtable_1" id="os_{$server.sid}"></td>
                 <td height="16" align="center" class="listtable_1" id="vac_{$server.sid}"></td>
-                <td height="16" class="listtable_1" id="host_{$server.sid}"><i>Querying Server Data...</i></td>
+                <td height="16" class="listtable_1" id="host_{$server.sid}"><i>{'servers.list.qsd'|t}</i></td>
                 <td height="16" class="listtable_1" id="players_{$server.sid}">N/A</td>
                 <td height="16" class="listtable_1" id="map_{$server.sid}">N/A</td>
             </tr>
@@ -40,8 +40,8 @@
                                                 <br />
                                                 <div align='center'>
                                                     <p style="font-size: 13px;">{$server.ip}:{$server.port}</p>
-                                                    <input type='submit' onclick="document.location = 'steam://connect/{$server.dns}:{$server.port}'" name='button' class='btn game' style='margin:0px;' id='button' value='Join game' />
-                                                    <input type='button' onclick="ShowBox('Reloading..','<b>Refreshing the Serverdata...</b><br><i>Please Wait!</i>', 'blue', '', false);document.getElementById('dialog-control').setStyle('display', 'none');xajax_RefreshServer({$server.sid});" name='button' class='btn refresh' style='margin:0;' id='button' value='Refresh' />
+                                                    <input type='submit' onclick="document.location = 'steam://connect/{$server.dns}:{$server.port}'" name='button' class='btn game' style='margin:0px;' id='button' value='{"servers.list.joingame"|t}' />
+                                                    <input type='button' onclick="ShowBox('{'servers.list.refresh'|t}','<b>{'servers.list.rfserdata'|t}</b><br><i>{'servers.list.pleasewait'|t}</i>', 'blue', '', false);document.getElementById('dialog-control').setStyle('display', 'none');xajax_RefreshServer({$server.sid});" name='button' class='btn refresh' style='margin:0;' id='button' value='{"servers.list.refresh"|t}' />
                                                 </div>
                                                 <br />
                                             </td>
@@ -49,11 +49,11 @@
                                     </table>
                                 </div>
                                 <div id="noplayer_{$server.sid}" name="noplayer_{$server.sid}" style="display:none;"><br />
-                                    <h2 style="color: #333;">No players in the server</h2><br />
+                                    <h2 style="color: #333;">{'servers.list.noplayersinse'|t}</h2><br />
                                     <div align='center'>
                                         <p style="font-size: 13px;">{$server.ip}:{$server.port}</p>
-                                        <input type='submit' onclick="document.location = 'steam://connect/{$server.dns}:{$server.port}'" name='button' class='btn game' style='margin:0;' id='button' value='Join game' />
-                                        <input type='button' onclick="ShowBox('Reloading..','<b>Refreshing the Serverdata...</b><br><i>Please Wait!</i>', 'blue', '', false);document.getElementById('dialog-control').setStyle('display', 'none');xajax_RefreshServer({$server.sid});" name='button' class='btn refresh' style='margin:0;' id='button' value='Refresh' /><br /><br />
+                                        <input type='submit' onclick="document.location = 'steam://connect/{$server.dns}:{$server.port}'" name='button' class='btn game' style='margin:0;' id='button' value='{"servers.list.joingame"|t}' />
+                                        <input type='button' onclick="ShowBox('{'servers.list.refresh'|t}','<b>{'servers.list.rfserdata'|t}</b><br><i>{'servers.list.pleasewait'|t}</i>', 'blue', '', false);document.getElementById('dialog-control').setStyle('display', 'none');xajax_RefreshServer({$server.sid});" name='button' class='btn refresh' style='margin:0;' id='button' value='{"servers.list.refresh"|t}' /><br /><br />
                                     </div>
                                 </div>
                             </div>

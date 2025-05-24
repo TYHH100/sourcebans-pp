@@ -86,3 +86,21 @@ function smarty_stripslashes($string)
 function smarty_htmlspecialchars($string, $flags = ENT_COMPAT | ENT_HTML401, $encoding = 'UTF-8', $double_encode = true) {
     return htmlspecialchars($string, $flags, $encoding, $double_encode);
 }
+
+if (!function_exists('__')) {
+    function __($key, ...$args) {
+        static $translations = [];
+        $lang = $_SESSION['lang'] ?? 'zh_CN';
+        $file = __DIR__ . "/../lang/{$lang}.php";
+        if (!isset($translations[$lang])) {
+            $translations[$lang] = file_exists($file) ? include $file : [];
+        }
+        $text = $translations[$lang][$key] ?? $key;
+        return $args ? vsprintf($text, $args) : $text;
+    }
+}
+
+function smarty_modifier_t($key, ...$args) {
+	error_log("t called: $key");
+    return __($key, ...$args);
+}

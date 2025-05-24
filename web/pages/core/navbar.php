@@ -109,4 +109,5 @@ $theme->assign('adminbar', array_values($admin));
 $theme->assign('isAdmin', $userbank->is_admin());
 $theme->assign('login', $userbank->is_logged_in());
 $theme->assign('username', $userbank->GetProperty("user"));
+$theme->assign('current_lang', $_SESSION['lang'] ?? 'en');
 $theme->display('core/navbar.tpl');
