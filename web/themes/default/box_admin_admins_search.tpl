@@ -1,7 +1,7 @@
 <div align="center">
     <table width="80%" cellpadding="0" class="listtable" cellspacing="0">
         <tr class="sea_open">
-            <td width="2%" height="16" class="listtable_top" colspan="3" style="text-align: center;"><b>Advanced Search<b></td>
+            <td width="2%" height="16" class="listtable_top" colspan="3" style="text-align: center;"><b>{'general.advanced.search'|t}<b></td>
         </tr>
         <tr>
             <td>

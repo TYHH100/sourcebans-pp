@@ -40,7 +40,7 @@
                 <td class="listtable_1" align="center">{$player.created}</td>
                 <td class="listtable_1">
                     {if empty($player.short_name)}
-                        <i><font color="#677882">{'general.noname'|t}</font></i>
+                        <i><font color="#677882">{'general.no.name'|t}</font></i>
                     {else}
                         {$player.short_name|escape:'html'}
                     {/if}
@@ -78,7 +78,7 @@
                 <td width="25%" height="16" class="listtable_1">{$player.date}</td>
                 <td height="16" class="listtable_1">
                     {if empty($player.short_name)}
-                        <i><font color="#677882">{'general.noname'|t}</font></i>
+                        <i><font color="#677882">{'general.no.name'|t}</font></i>
                     {else}
                         <span>{$player.short_name|escape:'html'}</span>
                     {/if}
@@ -120,7 +120,7 @@
                 <td class="listtable_1">{$player.created}</td>
                 <td class="listtable_1">
                     {if empty($player.short_name)}
-                        <i><font color="#677882">{'general.noname'|t}</font></i>
+                        <i><font color="#677882">{'general.no.name'|t}</font></i>
                     {else}
                         {$player.short_name|escape:'html'}
                     {/if}

@@ -52,11 +52,11 @@
         {/foreach}
     </table>
 {else}
-    <h3 align="left">Banlist Overview - <i>Total Bans: {$total_bans}</i></h3>
+    <h3 align="left">{'ban.list.banlist.overview'|t} - <i>{'ban.list.total.bans'|t:$total_bans}</i></h3>
     <br />
     {load_template file='admin.bans.search'}
     <br />
-    <div id="banlist-nav"><a href="index.php?p=banlist&hideinactive={if $hidetext == 'Hide'}true{else}false{/if}{$searchlink|smarty_htmlspecialchars}" title="{$hidetext} inactive">{$hidetext} inactive</a> | <i>Total Bans: {$total_bans}</i></div>
+    <div id="banlist-nav"><a href="index.php?p=banlist&hideinactive={if $hidetext == 'Hide'}true{else}false{/if}{$searchlink|smarty_htmlspecialchars}" title="{$hidetext} inactive">{$hidetext} {'general.inactive'|t}</a> | <i>{'ban.list.total.bans'|t:$total_bans}</i></div>
     <div id="banlist">
         <table width="100%" cellspacing="0" cellpadding="0" align="center" class="listtable">
             <tr>
@@ -85,7 +85,7 @@
                     <td height="16" class="listtable_1">
                         <div style="float:left;">
                             {if empty($ban.player)}
-                                <i><font color="#677882">{'general.noname'|t}</font></i>
+                                <i><font color="#677882">{'general.no.name'|t}</font></i>
                             {else}
                                 {$ban.player|escape:'html'|smarty_stripslashes}
                             {/if}
@@ -126,7 +126,7 @@
                                     <td width="30%" height="16" class="listtable_1">{'general.players'|t}</td>
                                     <td height="16" class="listtable_1">
                                         {if empty($ban.player)}
-                                            <i><font color="#677882">{'general.noname'|t}</font></i>
+                                            <i><font color="#677882">{'general.no.name'|t}</font></i>
                                         {else}
                                             {$ban.player|escape:'html'|smarty_stripslashes}
                                         {/if}
