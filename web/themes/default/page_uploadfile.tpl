@@ -13,7 +13,7 @@
 	margin: 5px;
 	padding: 0px;
    ">
-<h3>{$title}</h3>
+<h3>{$title|t}</h3>
 
 
 Plese select the file to upload. The file must either be {$formats} file format.<br>

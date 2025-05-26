@@ -31,7 +31,7 @@
                 </div>
                 -{if $steamlogin_show == 1}-
                 <div id="loginOtherlinks">
-                    <a href="index.php?p=lostpassword">Lost your password?</a>
+                    <a href="index.php?p=lostpassword&lang={$current_lang}">Lost your password?</a>
                 </div>
                 -{/if}-
             </div>

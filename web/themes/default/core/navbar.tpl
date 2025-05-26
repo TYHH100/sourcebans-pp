@@ -4,7 +4,7 @@
             <ul>
                 {foreach from=$navbar item=nav}
                     <li class="{$nav.state}">
-                        <a href="index.php?p={$nav.endpoint}" class="tip" title="{$nav.title|t}::{$nav.description|t}" target="_self">{$nav.title|t}</a>
+                        <a href="index.php?p={$nav.endpoint}&lang={$current_lang}" class="tip" title="{$nav.title|t}::{$nav.description|t}" target="_self">{$nav.title|t}</a>
                     </li>
                 {/foreach}
             </ul>
