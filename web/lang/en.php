@@ -9,6 +9,10 @@ return [
     'general.players' => 'Players',
     'general.pleasewait' => 'Please Wait!',
     'general.admins' => 'Admins',
+    'general.kick' => 'Kick',
+    'general.blockcomms' => 'Block Comms',
+    'general.ban' => 'Ban',
+    'general.sendmessage' => 'Send Message',
  
     // Dashboard
     'dashboard.total.blocked' => 'Total Stopped: %d',
@@ -20,6 +24,7 @@ return [
     'dashboard.comm.blocks.type' => 'Type',
 
     // Servers List
+    'servers.list.title' => 'Server List',
     'servers.list.os' => 'OS',
     'servers.list.vac' => 'VAC',
     'servers.list.hostname' => 'Hostname',
@@ -31,6 +36,11 @@ return [
     'servers.list.reloading' => 'Reloading...',
     'servers.list.rfserdata' => 'Refreshing the Serverdata...',
     'servers.list.noplayersinse' => 'No players in the server',
+    'servers.list.playercommands' => 'Player Commands',
+    'servers.list.playercommands.viewprofile' => 'View Profile',
+
+    // Ban List
+    'banlist.title' => 'Ban List',
 
     // Navbar
     'navbar.title.dashboard' => 'Dashboard',

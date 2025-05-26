@@ -25,6 +25,7 @@ use xPaw\SourceQuery\SourceQuery;
 
 require_once __DIR__ . '/xajax.inc.php';
 require_once __DIR__ . '/system-functions.php';
+require_once __DIR__ . '/SmartyCustomFunctions.php';
 require_once __DIR__ . '/vendor/autoload.php';
 
 $xajax = new xajax();
@@ -1651,13 +1652,13 @@ function ServerHostPlayers($sid, $type="servers", $obId="", $tplsid="", $open=""
                             );
                             if ($userbank->HasAccess(ADMIN_OWNER|ADMIN_ADD_BAN)) {
                                 $objResponse->addScript(
-                                    'AddContextMenu("#player_s'.$sid.'p'.$player["Id"].'", "contextmenu", true, "Player Commands", [
-                                    {name: "Kick", callback: function(){KickPlayerConfirm('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'", 0);}},
-                                    {name: "Block Comms", callback: function(){window.location = "index.php?p=admin&c=comms&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
-                                    {name: "Ban", callback: function(){window.location = "index.php?p=admin&c=bans&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
+                                    'AddContextMenu("#player_s'.$sid.'p'.$player["Id"].'", "contextmenu", true, "'.addslashes(__('servers.list.playercommands')).'", [
+                                    {name: "'.addslashes(__('general.kick')).'", callback: function(){KickPlayerConfirm('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'", 0);}},
+                                    {name: "'.addslashes(__('general.blockcomms')).'", callback: function(){window.location = "index.php?p=admin&c=comms&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
+                                    {name: "'.addslashes(__('general.ban')).'", callback: function(){window.location = "index.php?p=admin&c=bans&action=pasteBan&sid='.$sid.'&pName='.str_replace('"', '\"', $player["Name"]).'"}},
                                     {separator: true},
-                                    '.(ini_get('safe_mode')==0 ? '{name: "View Profile", callback: function(){ViewCommunityProfile('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'")}},':'').'
-                                    {name: "Send Message", callback: function(){OpenMessageBox('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'", 1)}}
+                                    '.(ini_get('safe_mode')==0 ? '{name: "'.addslashes(__('servers.list.playercommands.viewprofile')).'", callback: function(){ViewCommunityProfile('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'")}},':'').'
+                                    {name: "'.addslashes(__('general.sendmessage')).'", callback: function(){OpenMessageBox('.$sid.', "'.str_replace('"', '\"', $player["Name"]).'", 1)}}
                                 ]);'
                                 );
                             }
