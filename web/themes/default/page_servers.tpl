@@ -7,7 +7,7 @@
             <td width="2%" height="16" class="listtable_top">{'servers.list.os'|t}</td>
             <td width="2%" height="16" class="listtable_top">{'servers.list.vac'|t}</td>
             <td height="16" class="listtable_top" align="center"><b>{'servers.list.hostname'|t}</b></td>
-            <td width="10%" height="16" class="listtable_top"><b>{'servers.list.players'|t}</b></td>
+            <td width="10%" height="16" class="listtable_top"><b>{'general.players'|t}</b></td>
             <td width="10%" height="16" class="listtable_top"><b>{'servers.list.map'|t}</b></td>
         </tr>
         </thead>
@@ -41,7 +41,7 @@
                                                 <div align='center'>
                                                     <p style="font-size: 13px;">{$server.ip}:{$server.port}</p>
                                                     <input type='submit' onclick="document.location = 'steam://connect/{$server.dns}:{$server.port}'" name='button' class='btn game' style='margin:0px;' id='button' value='{"servers.list.joingame"|t}' />
-                                                    <input type='button' onclick="ShowBox('{'servers.list.refresh'|t}','<b>{'servers.list.rfserdata'|t}</b><br><i>{'servers.list.pleasewait'|t}</i>', 'blue', '', false);document.getElementById('dialog-control').setStyle('display', 'none');xajax_RefreshServer({$server.sid});" name='button' class='btn refresh' style='margin:0;' id='button' value='{"servers.list.refresh"|t}' />
+                                                    <input type='button' onclick="ShowBox('{'servers.list.reloading'|t}','<b>{'servers.list.rfserdata'|t}</b><br><i>{'general.pleasewait'|t}</i>', 'blue', '', false);document.getElementById('dialog-control').setStyle('display', 'none');xajax_RefreshServer({$server.sid});" name='button' class='btn refresh' style='margin:0;' id='button' value='{"servers.list.refresh"|t}' />
                                                 </div>
                                                 <br />
                                             </td>
@@ -53,7 +53,7 @@
                                     <div align='center'>
                                         <p style="font-size: 13px;">{$server.ip}:{$server.port}</p>
                                         <input type='submit' onclick="document.location = 'steam://connect/{$server.dns}:{$server.port}'" name='button' class='btn game' style='margin:0;' id='button' value='{"servers.list.joingame"|t}' />
-                                        <input type='button' onclick="ShowBox('{'servers.list.refresh'|t}','<b>{'servers.list.rfserdata'|t}</b><br><i>{'servers.list.pleasewait'|t}</i>', 'blue', '', false);document.getElementById('dialog-control').setStyle('display', 'none');xajax_RefreshServer({$server.sid});" name='button' class='btn refresh' style='margin:0;' id='button' value='{"servers.list.refresh"|t}' /><br /><br />
+                                        <input type='button' onclick="ShowBox('{'servers.list.reloading'|t}','<b>{'servers.list.rfserdata'|t}</b><br><i>{'general.pleasewait'|t}</i>', 'blue', '', false);document.getElementById('dialog-control').setStyle('display', 'none');xajax_RefreshServer({$server.sid});" name='button' class='btn refresh' style='margin:0;' id='button' value='{"servers.list.refresh"|t}' /><br /><br />
                                     </div>
                                 </div>
                             </div>

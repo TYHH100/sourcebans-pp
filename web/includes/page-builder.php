@@ -40,7 +40,7 @@ function route($fallback)
         case 'lostpassword':
             return ['Lost your password', '/page.lostpassword.php'];
         case 'home':
-            return ['Dashboard', '/page.home.php'];
+            return ['navbar.title.dashboard', '/page.home.php'];
         case 'admin':
             switch ($categorie) {
                 case 'groups':

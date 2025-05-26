@@ -4,14 +4,14 @@
             <ul>
                 {foreach from=$navbar item=nav}
                     <li class="{$nav.state}">
-                        <a href="index.php?p={$nav.endpoint}" class="tip" title="{$nav.title}::{$nav.description}" target="_self">{$nav.title}</a>
+                        <a href="index.php?p={$nav.endpoint}" class="tip" title="{$nav.title|t}::{$nav.description|t}" target="_self">{$nav.title|t}</a>
                     </li>
                 {/foreach}
             </ul>
             <div id="nav">
                 {if $isAdmin}
                     {foreach from=$adminbar item=admin}
-                        <a class="nav_link {$admin.state}" href="index.php?p=admin&c={$admin.endpoint}">{$admin.title}</a>
+                        <a class="nav_link {$admin.state}" href="index.php?p=admin&c={$admin.endpoint}">{$admin.title|t}</a>
                     {/foreach}
                 {/if}
             </div>

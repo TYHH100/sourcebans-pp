@@ -21,11 +21,11 @@
 </div>
 <br/>
 <div id="content_title">
-    <b>{$title}</b>
+    <b>{$title|t}</b>
 </div>
 <div id="breadcrumb">
     {foreach from=$breadcrumb item=crumb}
-        &raquo; <a href="{$crumb.url}">{$crumb.title}</a>
+        &raquo; <a href="{$crumb.url}">{$crumb.title|t}</a>
     {/foreach}
 </div>
 <div id="content">

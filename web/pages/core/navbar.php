@@ -3,82 +3,82 @@ global $userbank, $theme;
 
 $navbar = [
      [
-        'title' => 'Dashboard',
+        'title' => 'navbar.title.dashboard',
         'endpoint' => 'home',
-        'description' => 'This page shows an overview of your bans and servers.',
+        'description' => 'navbar.description.dashboard',
         'permission' => true
     ],
     [
-        'title' => 'Servers',
+        'title' => 'navbar.title.servers',
         'endpoint' => 'servers',
-        'description' => 'All of your servers and their status can be viewed here.',
+        'description' => 'navbar.description.servers',
         'permission' => true
     ],
     [
-        'title' => 'Bans',
+        'title' => 'navbar.title.bans',
         'endpoint' => 'banlist',
-        'description' => 'All of the bans in the database can be viewed from here.',
+        'description' => 'navbar.description.bans',
         'permission' => true
     ],
     [
-        'title' => 'Comms',
+        'title' => 'navbar.title.comms',
         'endpoint' => 'commslist',
-        'description' => 'All of the communication bans (such as chat gags and voice mutes) in the database can be viewed from here.',
+        'description' => 'navbar.description.comms',
         'permission' => Config::getBool('config.enablecomms')
     ],
     [
-        'title' => 'Report a Player',
+        'title' => 'navbar.title.replayer',
         'endpoint' => 'submit',
-        'description' => 'You can submit a demo or screenshot of a suspected cheater here. It will then be up for review by one of the admins.',
+        'description' => 'navbar.description.replayer',
         'permission' => Config::getBool('config.enablesubmit')
     ],
     [
-        'title' => 'Appeal a Ban',
+        'title' => 'navbar.title.appealban',
         'endpoint' => 'protest',
-        'description' => 'Here you can appeal your ban. And prove your case as to why you should be unbanned.',
+        'description' => 'navbar.description.appealban',
         'permission' => Config::getBool('config.enableprotest')
     ],
     [
-        'title' => 'Admin Panel',
+        'title' => 'navbar.title.adminpanel',
         'endpoint' => 'admin',
-        'description' => 'This is the control panel for SourceBans where you can setup new admins, add new server, etc.',
+        'description' => 'navbar.description.adminpanel',
         'permission' => $userbank->is_admin()
     ]
 ];
 
 $admin = [
     [
-        'title' => 'Admins',
+        'title' => 'general.admins',
         'endpoint' => 'admins',
         'permission' => ADMIN_OWNER|ADMIN_LIST_ADMINS|ADMIN_ADD_ADMINS|ADMIN_EDIT_ADMINS|ADMIN_DELETE_ADMINS
     ],
     [
-        'title' => 'Servers',
+        'title' => 'navbar.title.servers',
         'endpoint' => 'servers',
         'permission' => ADMIN_OWNER|ADMIN_LIST_SERVERS|ADMIN_ADD_SERVER|ADMIN_EDIT_SERVERS|ADMIN_DELETE_SERVERS
     ],
     [
-        'title' => 'Bans',
+        'title' => 'navbar.title.bans',
         'endpoint' => 'bans',
         'permission' => ADMIN_OWNER|ADMIN_ADD_BAN|ADMIN_EDIT_OWN_BANS|ADMIN_EDIT_GROUP_BANS|ADMIN_EDIT_ALL_BANS|ADMIN_BAN_PROTESTS|ADMIN_BAN_SUBMISSIONS
     ],
     [
-        'title' => 'Comms',
+        'title' => 'navbar.title.comms',
         'endpoint' => 'comms',
         'permission' => ADMIN_OWNER|ADMIN_ADD_BAN|ADMIN_EDIT_OWN_BANS|ADMIN_EDIT_ALL_BANS
     ],
     [
-        'title' => 'Groups',
+        'title' => 'navbar.title.groups',
         'endpoint' => 'groups',
         'permission' => ADMIN_OWNER|ADMIN_LIST_GROUPS|ADMIN_ADD_GROUP|ADMIN_EDIT_GROUPS|ADMIN_DELETE_GROUPS
     ],
     [
-        'title' => 'Settings',
+        'title' => 'navbar.title.settings',
         'endpoint' => 'settings',
         'permission' => ADMIN_OWNER|ADMIN_WEB_SETTINGS
     ],
     [
-        'title' => 'Mods',
+        'title' => 'navbar.title.mods',
         'endpoint' => 'mods',
         'permission' => ADMIN_OWNER|ADMIN_LIST_MODS|ADMIN_ADD_MODS|ADMIN_EDIT_MODS|ADMIN_DELETE_MODS
     ]

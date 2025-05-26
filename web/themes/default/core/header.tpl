@@ -21,13 +21,13 @@
     <div id="search">
         <form method="get" action="index.php" onsubmit="validateForm(this)">
             <input type="hidden" name="p" value="banlist" />
-            <input class="searchbox" alt="Search Bans" name="searchText" type="text" onfocus="this.value='';" {literal}onblur="if (this.value=='') {this.value=' Search Bans...';}"{/literal} value=" Search Bans..." />
-            <input type="submit" name="Submit" value="Search" style="cursor:pointer;" class="button" />
+            <input class="searchbox" alt="Search Bans" name="searchText" type="text" onfocus="this.value='';" {literal}onblur="if (this.value=='') {this.value=' {'header.search.bans'|t}';}"{/literal} value=" {'header.search.bans'|t}" />
+            <input type="submit" name="Submit" value="{'header.search'|t}" style="cursor:pointer;" class="button" />
         </form>
         <form method="get" action="index.php" onsubmit="validateForm(this)">
             <input type="hidden" name="p" value="commslist" />
-            <input class="searchbox" alt="Search Comms" name="searchText" type="text" onfocus="this.value='';" {literal}onblur="if (this.value=='') {this.value=' Search Comms...';}"{/literal} value=" Search Comms... " />
-            <input type="submit" name="Submit" value="Search" style="cursor:pointer;" class="button" />
+            <input class="searchbox" alt="Search Comms" name="searchText" type="text" onfocus="this.value='';" {literal}onblur="if (this.value=='') {this.value=' {'header.search.comms'|t}';}"{/literal} value=" {'header.search.comms'|t}" />
+            <input type="submit" name="Submit" value="{'header.search'|t}" style="cursor:pointer;" class="button" />
         </form>
     </div>
 </div>
