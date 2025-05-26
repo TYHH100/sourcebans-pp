@@ -28,7 +28,7 @@ function route($fallback)
         case 'submit':
             return ['Submit a Ban', '/page.submit.php'];
         case 'banlist':
-            return ['Ban List', '/page.banlist.php'];
+            return ['ban.list.title', '/page.banlist.php'];
         case 'commslist':
             return ['Communications Block List', '/page.commslist.php'];
         case 'servers':
@@ -114,7 +114,7 @@ function route($fallback)
             switch ($fallback) {
                 case 1:
                     $_GET['p'] = 'banlist';
-                    return ['banlist.title', '/page.banlist.php'];
+                    return ['ban.list.title', '/page.banlist.php'];
                 case 2:
                     $_GET['p'] = 'servers';
                     return ['Server Info', '/page.servers.php'];

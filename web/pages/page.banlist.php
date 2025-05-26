@@ -614,7 +614,7 @@ while (!$res->EOF) {
     if ($res->fields['history_count'] > 1) {
         $data['prevoff_link'] = $res->fields['history_count'] . " " . CreateLinkR("&nbsp;(search)", "index.php?p=banlist&searchText=" . ($data['type'] == 0 ? $data['steamid'] : $res->fields['ban_ip']) . "&Submit");
     } else {
-        $data['prevoff_link'] = "No previous bans";
+        $data['prevoff_link'] = "ban.list.nopreviousbans";
     }
 
 
