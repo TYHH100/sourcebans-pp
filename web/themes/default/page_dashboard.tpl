@@ -22,7 +22,7 @@
                             {'dashboard.latest.added.bans'|t}
                         </td>
                         <td align="right">
-                            {'dashboard.total.bans'|t:$total_bans}
+                            {'ban.list.total.bans.d'|t:$total_bans}
                         </td>
                     </tr>
                 </table>
@@ -102,7 +102,7 @@
                             {'dashboard.latest.comm.blocks'|t}
                         </td>
                         <td align="right">
-                            {'dashboard.total.blocks'|t:$total_comms}
+                            {'comms.list.total.blocks.d'|t:$total_comms}
                         </td>
                     </tr>
                 </table>

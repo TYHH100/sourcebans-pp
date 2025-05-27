@@ -52,7 +52,7 @@
         {/foreach}
     </table>
 {else}
-    <h3 align="left">Communications Blocklist Overview - <i>Total Blocks: {$total_bans}</i></h3>
+    <h3 align="left">{'comms.list.cbo'|t} - <i>{'comms.list.total.blocks.d'|t:$total_bans}</i></h3>
     <br />
     {load_template file='admin.comms.search'}
     <br />
@@ -63,13 +63,13 @@
     <div id="banlist">
         <table width="100%" cellspacing="0" cellpadding="0" align="center" class="listtable">
             <tr>
-                <td width="8%" height="16" class="listtable_top" align="center"><b>MOD/Type</b></td>
-                <td width="14%" height="16" class="listtable_top" align="center"><b>Date</b></td>
-                <td height="16" class="listtable_top"><b>Player</b></td>
+                <td width="8%" height="16" class="listtable_top" align="center"><b>{'comms.list.modtype'|t}</b></td>
+                <td width="14%" height="16" class="listtable_top" align="center"><b>{'general.datetime'|t}</b></td>
+                <td height="16" class="listtable_top"><b>{'general.players'|t}</b></td>
                 {if !$hideadminname}
-                    <td width="12%" height="16" class="listtable_top"><b>Admin</b></td>
+                    <td width="12%" height="16" class="listtable_top"><b>{'general.admins'|t}</b></td>
                 {/if}
-                <td width="16%" height="16" class="listtable_top" align="center"><b>Length</b></td>
+                <td width="16%" height="16" class="listtable_top" align="center"><b>{'general.length'|t}</b></td>
             </tr>
             {foreach from=$ban_list item=ban name=banlist}
                 <tr class="opener tbl_out" onmouseout="this.className='tbl_out'" onmouseover="this.className='tbl_hover'"
@@ -82,7 +82,7 @@
                     <td height="16" class="listtable_1">
                         <div style="float:left;">
                             {if empty($ban.player)}
-                                <i><font color="#677882">no nickname present</font></i>
+                                <i><font color="#677882">{'general.no.name'|t}</font></i>
                             {else}
                                 {$ban.player|escape:'html'|smarty_stripslashes}
                             {/if}
@@ -101,7 +101,7 @@
                             {if !empty($ban.admin)}
                                 {$ban.admin|escape:'html'}
                             {else}
-                                <i><font color="#677882">Admin deleted</font></i>
+                                <i><font color="#677882">{'general.admindeleted'|t}</font></i>
                             {/if}
                         </td>
                     {/if}
@@ -118,14 +118,14 @@
                                         {else}
                                     <td height="16" align="left" class="listtable_top" colspan="2">
                                         {/if}
-                                        <b>Block Details</b>
+                                        <b>{'comms.list.block.details'|t}</b>
                                     </td>
                                 </tr>
                                 <tr align="left">
-                                    <td width="20%" height="16" class="listtable_1">Player</td>
+                                    <td width="20%" height="16" class="listtable_1">{'general.players'|t}</td>
                                     <td height="16" class="listtable_1">
                                         {if empty($ban.player)}
-                                            <i><font color="#677882">no nickname present</font></i>
+                                            <i><font color="#677882">{'general.no.name'|t}</font></i>
                                         {else}
                                             {$ban.player|escape:'html'|smarty_stripslashes}
                                         {/if}
@@ -155,108 +155,108 @@
                                     <!-- ###############[ End Admin Controls ]##################### -->
                                 </tr>
                                 <tr align="left">
-                                    <td width="20%" height="16" class="listtable_1">Steam ID</td>
+                                    <td width="20%" height="16" class="listtable_1">{'general.steam.id'|t}</td>
                                     <td height="16" class="listtable_1">
                                         {if empty($ban.steamid)}
-                                            <i><font color="#677882">No Steam ID present</font></i>
+                                            <i><font color="#677882">{'general.no.steam.idpresent'|t}</font></i>
                                         {else}
                                             {$ban.steamid}
                                         {/if}
                                     </td>
                                 </tr>
                                 <tr align="left">
-                                    <td width="20%" height="16" class="listtable_1">Steam3 ID</td>
+                                    <td width="20%" height="16" class="listtable_1">{'general.steam3.id'|t}</td>
                                     <td height="16" class="listtable_1">
                                         {if empty($ban.steamid)}
-                                            <i><font color="#677882">No Steam3 ID present</font></i>
+                                            <i><font color="#677882">{'general.no.steam3.idpresent'|t}</font></i>
                                         {else}
                                             <a href="http://steamcommunity.com/profiles/{$ban.steamid3}" target="_blank">{$ban.steamid3}</a>
                                         {/if}
                                     </td>
                                 </tr>
                                 <tr align="left">
-                                    <td width="20%" height="16" class="listtable_1">Steam Community</td>
+                                    <td width="20%" height="16" class="listtable_1">{'general.steamcommunity.id'|t}</td>
                                     <td height="16" class="listtable_1">
                                         {if empty($ban.steamid)}
-                                            <i><font color="#677882">No Steam Community ID present</font></i>
+                                            <i><font color="#677882">{'general.no.steamcommunity.idpresent'|t}</font></i>
                                         {else}
                                             <a href="http://steamcommunity.com/profiles/{$ban.communityid}" target="_blank">{$ban.communityid}</a>
                                         {/if}
                                     </td>
                                 </tr>
                                 <tr align="left">
-                                    <td width="20%" height="16" class="listtable_1">Invoked on</td>
+                                    <td width="20%" height="16" class="listtable_1">{'general.invoked'|t}</td>
                                     <td height="16" class="listtable_1">{$ban.ban_date}</td>
                                 </tr>
                                 <tr align="left">
-                                    <td width="20%" height="16" class="listtable_1">Block length</td>
+                                    <td width="20%" height="16" class="listtable_1">{'comms.list.block.length'|t}</td>
                                     <td height="16" class="listtable_1">{$ban.banlength}</td>
                                 </tr>
                                 {if isset($ban.unbanned) && ($ban.unbanned == true)}
                                     <tr align="left">
-                                        <td width="20%" height="16" class="listtable_1">Unblock reason</td>
+                                        <td width="20%" height="16" class="listtable_1">{'comms.list.unblock.reason'|t}</td>
                                         <td height="16" class="listtable_1">
                                             {if !isset($ban.ureason) || $ban.ureason == ""}
-                                                <i><font color="#677882">no reason present</font></i>
+                                                <i><font color="#677882">{'general.no.reason.present'|t}</font></i>
                                             {else}
                                                 {$ban.ureason}
                                             {/if}
                                         </td>
                                     </tr>
                                     <tr align="left">
-                                        <td width="20%" height="16" class="listtable_1">Unblocked by Admin</td>
+                                        <td width="20%" height="16" class="listtable_1">{'comms.list.unblocked.byadmin'|t}</td>
                                         <td height="16" class="listtable_1">
                                             {if !empty($ban.removedby)}
                                                 {$ban.removedby|escape:'html'}
                                             {else}
-                                                <i><font color="#677882">Admin deleted.</font></i>
+                                                <i><font color="#677882">{'general.admindeleted'}</font></i>
                                             {/if}
                                         </td>
                                     </tr>
                                 {/if}
                                 <tr align="left">
-                                    <td width="20%" height="16" class="listtable_1">Expires on</td>
+                                    <td width="20%" height="16" class="listtable_1">{'general.expires'|t}</td>
                                     <td height="16" class="listtable_1">
                                         {if $ban.expires == "never"}
-                                            <i><font color="#677882">Not applicable.</font></i>
+                                            <i><font color="#677882">{'general.no.applicable'|t}</font></i>
                                         {else}
                                             {$ban.expires}
                                         {/if}
                                     </td>
                                 </tr>
                                 <tr align="left">
-                                    <td width="20%" height="16" class="listtable_1">Reason</td>
+                                    <td width="20%" height="16" class="listtable_1">{'general.reason'|t}</td>
                                     <td height="16" class="listtable_1">{$ban.reason|escape:'html'}</td>
                                 </tr>
                                 {if !$hideadminname}
                                     <tr align="left">
-                                        <td width="20%" height="16" class="listtable_1">Blocked by Admin</td>
+                                        <td width="20%" height="16" class="listtable_1">{'comms.list.blocked.byadmin'|t}</td>
                                         <td height="16" class="listtable_1">
                                             {if !empty($ban.admin)}
                                                 {$ban.admin|escape:'html'}
                                             {else}
-                                                <i><font color="#677882">Admin deleted.</font></i>
+                                                <i><font color="#677882">{'general.admindeleted'|t}</font></i>
                                             {/if}
                                         </td>
                                     </tr>
                                 {/if}
                                 <tr align="left">
-                                    <td width="20%" height="16" class="listtable_1">Blocked from</td>
+                                    <td width="20%" height="16" class="listtable_1">{'comms.list.blocked.from'|t}</td>
                                     <td height="16" class="listtable_1" {if $ban.server_id != 0}id="host_{$ban.ban_id}"{/if}>
                                         {if $ban.server_id == 0}
-                                            Web Ban
+                                            {'general.web.ban'|t}
                                         {else}
-                                            Please Wait...
+                                            {'general.pleasewait.waiting'|t}
                                         {/if}
                                     </td>
                                 </tr>
                                 <tr align="left">
-                                    <td width="20%" height="16" class="listtable_1">Total Blocks</td>
+                                    <td width="20%" height="16" class="listtable_1">{'comms.list.total.blocks'|t}</td>
                                     <td height="16" class="listtable_1">{$ban.prevoff_link}</td>
                                 </tr>
                                 {if $view_comments}
                                     <tr align="left">
-                                        <td width="20%" height="16" class="listtable_1">Comments</td>
+                                        <td width="20%" height="16" class="listtable_1">{'general.comments'|t}</td>
                                         <td height="60" class="listtable_1" colspan="2">
                                             {if $ban.commentdata != "None"}
                                                 <table width="100%" border="0">
@@ -273,7 +273,7 @@
                                                                 {if !empty($commenta.comname)}
                                                                     <b>{$commenta.comname|escape:'html'}</b>
                                                                 {else}
-                                                                    <i><font color="#677882">Admin deleted</font></i>
+                                                                    <i><font color="#677882">{'general.admindeleted'|t}</font></i>
                                                                 {/if}
                                                             </td>
                                                             <td align="right">

@@ -52,11 +52,11 @@
         {/foreach}
     </table>
 {else}
-    <h3 align="left">{'ban.list.banlist.overview'|t} - <i>{'ban.list.total.bans'|t:$total_bans}</i></h3>
+    <h3 align="left">{'ban.list.banlist.overview'|t} - <i>{'ban.list.total.bans.d'|t:$total_bans}</i></h3>
     <br />
     {load_template file='admin.bans.search'}
     <br />
-    <div id="banlist-nav"><a href="index.php?p=banlist&hideinactive={if $hidetext == 'Hide'}true{else}false{/if}{$searchlink|smarty_htmlspecialchars}" title="{$hidetext} inactive">{$hidetext} {'general.inactive'|t}</a> | <i>{'ban.list.total.bans'|t:$total_bans}</i></div>
+    <div id="banlist-nav"><a href="index.php?p=banlist&hideinactive={if $hidetext == 'Hide'}true{else}false{/if}{$searchlink|smarty_htmlspecialchars}" title="{$hidetext} inactive">{$hidetext} {'general.inactive'|t}</a> | <i>{'ban.list.total.bans.d'|t:$total_bans}</i></div>
     <div id="banlist">
         <table width="100%" cellspacing="0" cellpadding="0" align="center" class="listtable">
             <tr>
@@ -177,7 +177,7 @@
                                     <td width="20%" height="16" class="listtable_1">{'general.steam.id'|t}</td>
                                     <td height="16" class="listtable_1">
                                         {if empty($ban.steamid)}
-                                            <i><font color="#677882">{'general.no.Steam.idpresent'|t}</font></i>
+                                            <i><font color="#677882">{'general.no.steam.idpresent'|t}</font></i>
                                         {else}
                                             {$ban.steamid}
                                         {/if}
@@ -187,7 +187,7 @@
                                     <td width="20%" height="16" class="listtable_1">{'general.steam3.id'|t}</td>
                                     <td height="16" class="listtable_1">
                                         {if empty($ban.steamid)}
-                                            <i><font color="#677882">{'general.no.Steam3.idpresent'|t}</font></i>
+                                            <i><font color="#677882">{'general.no.steam3.idpresent'|t}</font></i>
                                         {else}
                                             <a href="http://steamcommunity.com/profiles/{$ban.steamid3}" target="_blank">{$ban.steamid3}</a>
                                         {/if}
@@ -198,7 +198,7 @@
                                         <td width="20%" height="16" class="listtable_1">{'general.steamcommunity.id'|t}</td>
                                         <td height="16" class="listtable_1">
                                             {if empty($ban.steamid)}
-                                                <i><font color="#677882">{'general.no.Steamcommunity.idpresent'|t}</font></i>
+                                                <i><font color="#677882">{'general.no.steamcommunity.idpresent'|t}</font></i>
                                             {else}
                                                 <a href="http://steamcommunity.com/profiles/{$ban.communityid}" target="_blank">{$ban.communityid}</a>
                                             {/if}
@@ -263,7 +263,7 @@
                                 </tr>
                                 {if !$hideadminname}
                                     <tr align="left">
-                                        <td width="20%" height="16" class="listtable_1">{'general.reason.banned.byadmin'|t}</td>
+                                        <td width="20%" height="16" class="listtable_1">{'ban.list.reason.banned.byadmin'|t}</td>
                                         <td height="16" class="listtable_1">
                                             {if !empty($ban.admin)}
                                                 {$ban.admin|escape:'html'}

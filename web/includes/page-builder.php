@@ -26,15 +26,15 @@ function route($fallback)
             header('Location: index.php?p=home');
             exit();
         case 'submit':
-            return ['Submit a Ban', '/page.submit.php'];
+            return ['submit.ban.title', '/page.submit.php'];
         case 'banlist':
             return ['ban.list.title', '/page.banlist.php'];
         case 'commslist':
-            return ['Communications Block List', '/page.commslist.php'];
+            return ['comms.list.title', '/page.commslist.php'];
         case 'servers':
             return ['servers.list.title', '/page.servers.php'];
         case 'protest':
-            return ['Protest a Ban', '/page.protest.php'];
+            return ['protest.ban.title', '/page.protest.php'];
         case 'account':
             return ['Your Account', '/page.youraccount.php'];
         case 'lostpassword':
