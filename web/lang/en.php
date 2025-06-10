@@ -99,7 +99,7 @@ return [
     'ban.list.modcountry' => 'MOD/Country',
     'ban.list.nopreviousbans' => 'No previous bans',
     'ban.list.bandetails' => 'Ban Details',
-    'ban.list.banlength' => 'Banlength',
+    'ban.list.banlength' => 'Ban length',
     'ban.list.unban.reason' => 'Unban reason',
     'ban.list.Unbanned.byadmin' => 'Unbanned by Admin',
     'ban.list.total.bans.d' => 'Total Bans: %d',
@@ -153,6 +153,7 @@ return [
 
     // Protest a Ban
     'protest.ban.title' => 'Protest a Ban',
+    'protest.ban.appeal' => 'Appeal a Ban',
     'protest.ban.description1' => 'In order to appeal a ban, you must make sure you are banned via clicking',
     'protest.ban.description2.view' => 'here',
     'protest.ban.description3' => 'to see if you are banned and for what reason.',

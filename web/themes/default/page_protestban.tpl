@@ -1,6 +1,6 @@
 <table style="width: 101%; margin: 0 0 -2px -2px;">
     <tr>
-        <td colspan="3" class="listtable_top"><b>Appeal a Ban</b></td>
+        <td colspan="3" class="listtable_top"><b>{'protest.ban.appeal'|t}</b></td>
     </tr>
 </table>
 <div id="submit-main">
