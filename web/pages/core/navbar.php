@@ -109,5 +109,28 @@ $theme->assign('adminbar', array_values($admin));
 $theme->assign('isAdmin', $userbank->is_admin());
 $theme->assign('login', $userbank->is_logged_in());
 $theme->assign('username', $userbank->GetProperty("user"));
+$available_languages = [];
+$lang_dir = __DIR__ . '/../../lang/';
+
+if (is_dir($lang_dir)) {
+    $files = scandir($lang_dir);
+    foreach ($files as $file) {
+        if (pathinfo($file, PATHINFO_EXTENSION) === 'php') {
+            $lang_code = pathinfo($file, PATHINFO_FILENAME);
+            $lang_file = $lang_dir . $file;
+
+            $lang_data = include($lang_file);
+            if (isset($lang_data['language.name'])) {
+                $available_languages[] = [
+                    'code' => $lang_code,
+                    'name' => $lang_data['language.name'],
+                    'selected' => ($_SESSION['lang'] ?? 'en') === $lang_code ? 'selected' : ''
+                ];
+            }
+        }
+    }
+}
+
+$theme->assign('available_languages', $available_languages);
 $theme->assign('current_lang', $_SESSION['lang'] ?? 'en');
 $theme->display('core/navbar.tpl');

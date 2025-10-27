@@ -513,10 +513,10 @@ while (!$res->EOF) {
         $data['ban_length'] = SecondsToString(intval($res->fields['ban_length']));
         $data['expires']    = Config::time($res->fields['ban_ends']);
     } else if ($res->fields['ban_length'] == 0) {
-        $data['ban_length'] = 'Permanent';
+        $data['ban_length'] = __('general.length.permanent');
         $data['expires']    = 'never';
     } else {
-        $data['ban_length'] = 'Session';
+        $data['ban_length'] = __('general.length.session');
         $data['expires']    = 'n/a';
     }
 
@@ -526,11 +526,11 @@ while (!$res->EOF) {
         $data['class']    = "listtable_1_unbanned";
 
         if ($res->fields['row_type'] == "D") {
-            $data['ub_reason'] = "(Deleted)";
+            $data['ub_reason'] = __('general.deleted');
         } elseif ($res->fields['row_type'] == "U") {
-            $data['ub_reason'] = "(Unbanned)";
+            $data['ub_reason'] = __('general.unbanned');
         } else {
-            $data['ub_reason'] = "(Expired)";
+            $data['ub_reason'] = __('general.expired');
         }
 
         if (isset($res->fields['unban_reason']))
@@ -541,7 +541,7 @@ while (!$res->EOF) {
         if (isset($removedby[0]) && $data['admin']) {
             $data['removedby'] = $removedby[0];
         }
-    } else if ($data['ban_length'] == 'Permanent') {
+    } else if ($data['ban_length'] == __('general.length.permanent')) {
         $data['class'] = "listtable_1_permanent";
     } else {
         $data['unbanned']  = false;

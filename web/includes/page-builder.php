@@ -108,7 +108,7 @@ function route($fallback)
                     return ['SourceBans++ Settings', '/admin.settings.php'];
                 default:
                     CheckAdminAccess(ALL_WEB);
-                    return ['Administration', '/page.admin.php'];
+                    return ['page.admin.title', '/page.admin.php'];
         }
         default:
             switch ($fallback) {
@@ -120,13 +120,13 @@ function route($fallback)
                     return ['Server Info', '/page.servers.php'];
                 case 3:
                     $_GET['p'] = 'submit';
-                    return ['Submit a Ban', '/page.submit.php'];
+                    return ['submit.ban.title', '/page.submit.php'];
                 case 4:
                     $_GET['p'] = 'protest';
-                    return ['Protest a Ban', '/page.protest.php'];
+                    return ['protest.ban.title', '/page.protest.php'];
                 default:
                     $_GET['p'] = 'home';
-                    return ['Dashboard', '/page.home.php'];
+                    return ['navbar.title.dashboard', '/page.home.php'];
             }
     }
 }

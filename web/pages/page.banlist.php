@@ -534,7 +534,7 @@ while (!$res->EOF) {
         $data['admin'] = stripslashes($res->fields['admin_name']);
     }
     $data['reason']     = stripslashes($res->fields['ban_reason']);
-    $data['ban_length'] = $res->fields['ban_length'] == 0 ? 'Permanent' : SecondsToString(intval($res->fields['ban_length']));
+    $data['ban_length'] = $res->fields['ban_length'] == 0 ? __('general.length.permanent') : SecondsToString(intval($res->fields['ban_length']));
 
     // Custom "listtable_1_banned" & "listtable_1_permanent" addition entries
     // Comment the 14 lines below out if they cause issues
@@ -556,11 +556,11 @@ while (!$res->EOF) {
         $data['class']    = "listtable_1_unbanned";
 
         if ($res->fields['row_type'] == "D") {
-            $data['ub_reason'] = "(Deleted)";
+            $data['ub_reason'] = __("general.deleted");
         } elseif ($res->fields['row_type'] == "U") {
-            $data['ub_reason'] = "(Unbanned)";
+            $data['ub_reason'] = __("general.unbanned");
         } else {
-            $data['ub_reason'] = "(Expired)";
+            $data['ub_reason'] = __("general.expired");
         }
 
         $data['ureason'] = stripslashes($res->fields['unban_reason'] ?? '');

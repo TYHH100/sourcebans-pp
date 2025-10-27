@@ -137,11 +137,11 @@ function CheckAdminAccess($mask)
 function SecondsToString($sec, $textual=true)
 {
     if ($sec < 0) {
-        return 'Session';
+        return __('general.length.session');
     }
     if ($textual) {
         $div = array( 2592000, 604800, 86400, 3600, 60, 1 );
-        $desc = array('mo','wk','d','hr','min','sec');
+        $desc = array(__('general.length.month'), __('general.length.week'), __('general.length.day'), __('general.length.hour'), __('general.length.minute'), __('general.length.second'));
         $ret = null;
         foreach ($div as $index => $value) {
             $quotent = floor($sec / $value); //greatest whole integer

@@ -90,7 +90,7 @@ function smarty_htmlspecialchars($string, $flags = ENT_COMPAT | ENT_HTML401, $en
 if (!function_exists('__')) {
     function __($key, ...$args) {
         static $translations = [];
-        $lang = $_SESSION['lang'] ?? 'zh_CN';
+        $lang = $_SESSION['lang'] ?? 'en';
         $file = __DIR__ . "/../lang/{$lang}.php";
         if (!isset($translations[$lang])) {
             $translations[$lang] = file_exists($file) ? include $file : [];

@@ -105,7 +105,7 @@ while (!$res->EOF) {
     $cleaned_name = trim($cleaned_name);
     $info['name']    = htmlspecialchars(addslashes($cleaned_name), ENT_QUOTES, 'UTF-8');
     $info['created'] = Config::time($res->fields['created']);
-    $ltemp           = explode(",", $res->fields[6] == 0 ? 'Permanent' : SecondsToString(intval($res->fields[6])));
+    $ltemp           = explode(",", $res->fields[6] == 0 ? __('general.length.permanent') : SecondsToString(intval($res->fields[6])));
     $info['length']  = $ltemp[0];
     $info['icon']    = empty($res->fields[13]) ? 'web.png' : $res->fields[13];
     $info['authid']  = $res->fields[2];
@@ -171,7 +171,7 @@ while (!$res->EOF) {
     $cleaned_name = trim($cleaned_name);
     $info['name']        = htmlspecialchars(addslashes($cleaned_name), ENT_QUOTES, 'UTF-8');
     $info['created']     = Config::time($res->fields['created']);
-    $ltemp               = explode(",", $res->fields[6] == 0 ? 'Permanent' : SecondsToString(intval($res->fields[6])));
+    $ltemp               = explode(",", $res->fields[6] == 0 ? __('general.length.permanent') : SecondsToString(intval($res->fields[6])));
     $info['length']      = $ltemp[0];
     $info['icon']        = empty($res->fields[13]) ? 'web.png' : $res->fields[13];
     $info['authid']      = $res->fields['authid'];
